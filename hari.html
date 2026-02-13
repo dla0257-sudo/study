@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>당신을 위한 선물</title>
+    <style>
+        body {
+            background-color: #fff0f5; /* 연한 핑크 배경 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Nanum Gothic', sans-serif;
+            color: #d63384;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 10px 25px rgba(255, 182, 193, 0.5);
+            border: 2px solid #ffb6c1;
+            max-width: 400px;
+        }
+        h1 { font-size: 24px; margin-bottom: 20px; }
+        p { font-size: 18px; line-height: 1.6; }
+        .heart { color: #ff69b4; font-size: 30px; margin: 10px 0; }
+        
+        /* 비밀번호 입력창 스타일 */
+        input {
+            padding: 10px;
+            border: 2px solid #ffb6c1;
+            border-radius: 10px;
+            outline: none;
+            text-align: center;
+            font-size: 16px;
+            width: 150px;
+            margin-top: 20px;
+        }
+        button {
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        button:hover { background-color: #ff1493; }
+
+        /* 숨겨진 메시지 스타일 */
+        #hiddenMessage {
+            display: none;
+            margin-top: 30px;
+            font-size: 32px;
+            font-weight: bold;
+            color: #ff1493;
+            animation: heartbeat 1.2s infinite;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="heart">💖✨🌸</div>
+    <h1>오늘 하루도 고생 많았어요!</h1>
+    <p>세상에서 가장 소중한 당신,<br>
+       어떤 일이 있어도 항상 응원해요.<br>
+       <strong>정말 많이 사랑합니다!</strong></p>
+    <div class="heart">🌸✨💖</div>
+
+    <hr style="border: 0.5px solid #ffe4e1; margin: 20px 0;">
+
+    <p style="font-size: 14px;">비밀번호를 입력해보세요</p>
+    <input type="password" id="pwInput" placeholder="4자리 숫자">
+    <br>
+    <button onclick="checkPassword()">확인</button>
+
+    <div id="hiddenMessage">🤟 I LOVE YOU 🤟</div>
+</div>
+
+<script>
+    function checkPassword() {
+        const pw = document.getElementById('pwInput').value;
+        const message = document.getElementById('hiddenMessage');
+        
+        if (pw === "0510") {
+            message.style.display = "block";
+            alert("정답이에요! ❤️");
+        } else {
+            alert("비밀번호가 틀렸어요. 다시 확인해볼까요?");
+            message.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>
